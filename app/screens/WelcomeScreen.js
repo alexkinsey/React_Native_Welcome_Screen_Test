@@ -3,7 +3,14 @@ import { ImageBackground, StyleSheet, View, Image, Text, Button, SafeAreaView } 
 
 import colors from '../config/colors';
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
+  const loginPressed = () => {
+    navigation.navigate('Login');
+  };
+  const signUpPressed = () => {
+    navigation.navigate('SignUp');
+  };
+
   return (
     <ImageBackground resizeMode="cover" style={styles.background} source={require('../assets/WelcomeScreenBackground.jpg')}>
       <View style={styles.logoContainer}>
@@ -12,10 +19,10 @@ function WelcomeScreen(props) {
       </View>
       <SafeAreaView style={styles.loginContainer}>
         <View style={styles.loginButton}>
-          <Button color={colors.white} style={styles.button} title="Login" onPress={() => console.log('press')} />
+          <Button color={colors.white} style={styles.button} title="Login" onPress={loginPressed} />
         </View>
         <View style={styles.signUpButton}>
-          <Button color={colors.white} style={styles.button} title="Sign Up" onPress={() => console.log('press')} />
+          <Button color={colors.white} style={styles.button} title="Sign Up" onPress={signUpPressed} />
         </View>
       </SafeAreaView>
     </ImageBackground>
@@ -70,8 +77,8 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });
 
 export default WelcomeScreen;
