@@ -15,7 +15,7 @@ function WelcomeScreen({ navigation }) {
     <ImageBackground resizeMode="cover" style={styles.background} source={require('../assets/WelcomeScreenBackground.jpg')}>
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require('../assets/logo-red.png')} />
-        <Text style={styles.title}>Sell what you don't need!</Text>
+        <Text style={styles.title}>A world of interior design at your fingers</Text>
       </View>
       <SafeAreaView style={styles.loginContainer}>
         <View style={styles.loginButton}>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   title: {
     paddingTop: 75,
-    width: 250,
+    width: 350,
     textAlign: 'center',
     color: 'white',
     fontSize: 32,
